@@ -1,0 +1,28 @@
+Investigation and clustering options include:
+- (1) Just run a local spark docker instance and jupyter docker instance and load the data from whereever it
+has been saved.
+
+- (2) Run a AWS managed jupyter notebook in AWS Glue and load the data from S3/AWS Glue.
+This would be an option to simulate a situation where the data is too large to be run on
+my local computer.
+
+- (3) Build an EMR cluster with terraform, then point a local jupyter notebook
+docker instance to the EMR cluster and load the data from S3.
+
+- (4) Run a docker image of the spark notebook image on a large ec2 spot instance, (obviously maintaining the storage device)
+and port forwarding via ssh locally. (As there is no need to pay for a EMR cluster, when it looks like just running on a large
+machine will suffice. Also, as spark notebook is configurable to a remote spark cluster, should the data be too large to run on
+one machine, I can spin up an EMR cluster and point the spark notebook to that.)
+
+CHOICE:
+The above options are for varying levels of
+data management/regulation(ie must stay in AWS account)/data size. I chose (4) as it
+allowed for scaling up the setup should there be any restrictions in memory/CPU.
+
+
+Steps
+- Spin up a spot instance using the config.json, ensuring the disk is not
+terminated should the spot instance be terminated.
+- ssh into the instance, tunnelling the exposed port of the docker instance
+to my localhost.
+- Start analysing the data.

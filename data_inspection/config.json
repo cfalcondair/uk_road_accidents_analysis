@@ -1,0 +1,30 @@
+{
+  "SpotPrice": "0.319",
+  "LaunchSpecification": {
+    "ImageId": "ami-02fd0b06f06d93dfc",
+    "InstanceType": "r4.xlarge",
+    "KeyName": "aws_development",
+    "IamInstanceProfile": {
+      "Arn": "arn:aws:iam::432646201834:instance-profile/EC2-to-S3"
+    },
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/xvda",
+        "Ebs": {
+          "DeleteOnTermination": true,
+          "VolumeType": "gp2",
+          "VolumeSize": 8,
+          "SnapshotId": "snap-049d43093b7ca3721"
+        }
+      }
+    ],
+    "UserData": "IyEvYmluL3NoCiMgZW5jb2Rpbmc6IHV0Zi04CgpzdWRvIHl1bSB1cGRhdGUgLXkKc3VkbyB5dW0gaW5zdGFsbCAteSBkb2NrZXIKc3VkbyBzZXJ2aWNlIGRvY2tlciBzdGFydApzdWRvIHVzZXJtb2QgLWEgLUcgZG9ja2VyIGVjMi11c2VyCgplY2hvICJEb3dubG9hZGluZyBkYXRhIgpGSUxFX05BTUU9U3RhdHMxOV9EYXRhXzIwMDUtMjAxNC56aXAKVVJMPWh0dHA6Ly9kYXRhLmRmdC5nb3YudWsvcm9hZC1hY2NpZGVudHMtc2FmZXR5LWRhdGEvJEZJTEVfTkFNRQoKZWNobyAiUmV0cmlldmluZyBmaWxlIGZyb20gIiRVUkwKd2dldCAtcSAtUCAvdG1wLyAkVVJMCgplY2hvICJVbnppcHBpbmcgZmlsZS4uLiIKbWtkaXIgLXAgL3RtcC91a19yb2FkX2FjY2lkZW50c19kYXRhLwp1bnppcCAvdG1wLyRGSUxFX05BTUUgLWQgL3RtcC91a19yb2FkX2FjY2lkZW50c19kYXRhLwpybSAtZiAvdG1wLyRGSUxFX05BTUUKCmVjaG8gIkRvd25sb2FkIGNvbXBsZXRlLiIKCmRvY2tlciBydW4gLWQgLXAgOTAwMDo5MDAwIC1wIDQwNDAtNDA0NTo0MDQwLTQwNDUgLXYgYHB3ZGA6L29wdC9kb2NrZXIvbm90ZWJvb2tzL290aGVyIC12IC90bXAvdWtfcm9hZF9hY2NpZGVudHNfZGF0YS86L3RtcC9kYXRhIGFuZHlwZXRyZWxsYS9zcGFyay1ub3RlYm9vazowLjkuMC1TTkFQU0hPVC1zY2FsYS0yLjExLjgtc3BhcmstMi4zLjAtaGFkb29wLTIuNy4yCg==",
+    "AllSecurityGroups": [
+      {
+        "GroupId": "sg-063404bc12cd90d44"
+      }
+    ]
+  },
+  "InstanceCount": 1,
+  "BlockDurationMinutes": 360
+}

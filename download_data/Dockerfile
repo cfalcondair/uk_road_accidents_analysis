@@ -10,4 +10,4 @@ RUN apk add \
 
 ADD download.sh /usr/src/app/download.sh
 
-CMD sh
+CMD sh download.sh

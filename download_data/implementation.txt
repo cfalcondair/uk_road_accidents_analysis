@@ -1,0 +1,25 @@
+Pipeline options include:
+- (1) First write the script to download the data, saving the data in s3
+using a lambda(written in scala and serverless) and then crawled/categorised by AWS Glue,
+all of which could be written initialised using Terraform.
+
+- (2) Saving the files locally via shell script, then saving to a local postgres
+docker instance via a Scala package run on a local Spark cluster in a docker
+instance.
+
+CHOICE:
+(1) as it has the smallest overhead for this task. Problems with it are that it
+could have some vendor lock-in, but with the serverless package and terraform,
+swapping to a cloud competitor should be simple.
+
+
+Steps
+- First write a script to download the file.
+
+- Then implement this in a language that AWS Lambda can run, say python.
+
+- Then use terraform to build the AWS users/policy to upload to S3, create the
+S3 bucket, create the lambda role and the lambda, the glue crawler.
+
+- Implement the python function, then use the serverless package to define the Lambda
+configuration(perhaps to download monthly?) and upload to AWS.

@@ -14,3 +14,9 @@ unzip /tmp/$FILE_NAME -d /tmp/uk_road_accidents_data/
 rm -f /tmp/$FILE_NAME
 
 echo "Download complete."
+
+echo "Uploading data to s3"
+
+aws s3 cp /tmp/uk_road_accidents_data/ s3://uk-traffic-data/ --recursive
+
+rm -rf /tmp/uk_road_accidents_data/

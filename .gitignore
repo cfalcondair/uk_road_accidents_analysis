@@ -4,3 +4,9 @@
 
 # Data Science
 data/
+
+# Terraform
+**/.terraform/*
+crash.log
+**/plan
+

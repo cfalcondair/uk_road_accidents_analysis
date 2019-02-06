@@ -7,6 +7,11 @@ resource "aws_iam_group_policy_attachment" "deployment_ec2_full_access" {
   policy_arn = "${data.aws_iam_policy.ec2_full_access.arn}"
 }
 
+resource "aws_iam_group_policy_attachment" "deployment_s3_full_access" {
+  group      = "${aws_iam_group.deployment.name}"
+  policy_arn = "${data.aws_iam_policy.s3_full_access.arn}"
+}
+
 # At a later date, confine this role to just be manual iam read access, as
 # the ec2 building requires iam:PassRole, which is not in the default
 # arn:aws:iam::aws:policy/IAMReadOnlyAccess policy.
